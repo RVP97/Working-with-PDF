@@ -3,7 +3,7 @@ from fpdf import FPDF as PDF
 pdf = PDF(orientation='P', unit='pt', format='A4')
 pdf.add_page()
 
-pdf.image(name='tiger.jpeg', w=80, h=50)
+pdf.image(name='Images\\tiger.jpeg', w=80, h=50)
 
 pdf.set_font('Arial', size=24, style='B')
 pdf.cell(w=0, h=50, txt='Malayan Tiger', align='C', ln=1)
@@ -23,4 +23,14 @@ malayan_tiger_text = "The Malayan tiger is a tiger from a specific population of
 pdf.set_font(family='Times', size=12)
 pdf.multi_cell(w=0, h=15, txt=malayan_tiger_text)
 
-pdf.output('tiger.pdf')
+pdf.set_font(family='Times', size=12, style='B')
+pdf.cell(w=100, h=30, txt='Kingdom:', align='L')
+pdf.set_font(family='Times', size=12)
+pdf.cell(w=100, h=30, txt='Animalia', align='L', ln=1)
+
+pdf.set_font(family='Times', size=12, style='B')
+pdf.cell(w=100, h=30, txt='Phylum:', align='L')
+pdf.set_font(family='Times', size=12)
+pdf.cell(w=100, h=30, txt='Chordata', align='L')
+
+pdf.output('PDFs\\tiger.pdf')
